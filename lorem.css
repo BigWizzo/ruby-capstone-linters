@@ -9,3 +9,19 @@
 .aic { 
   align-items: center;
 }
+
+.d-flex {
+  display: flex;
+}
+ 
+.flex-col { 
+  flex-direction: column;
+
+
+.aic { 
+  align-items: center;
+}
+ 
+}
+
+}
