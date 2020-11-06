@@ -1,13 +1,5 @@
-class LintProcess
-  attr_reader :file, :file_array, :hash_arr, :bracket_hash
 
-  def initialize
-    @file = 'lorem.css'
-    @file_array = File.readlines(file)
-    @bracket_hash = {}
-    @hash_arr = []
-  end
-end
+require_relative './lint_process'
 
 linter = LintProcess.new
 file = linter.file
@@ -38,6 +30,58 @@ def bracket_line(arr, hash)
   hash
 end
 bracket_line(file_array, bracket_hash)
+
+# Check for multiple brackets per line
+def multi_brackets(arr, hash)
+  arr.each_with_index do |line_string, index|
+    if line_string.scan(/\{|\}/).length > 1
+      puts "Multiple brackets detected on line: #{index + 1}"
+    end
+  end
+end
+multi_brackets(file_array, bracket_hash)
+
+# Check if the colon is position at the end of the line
+def last_colon(arr, hash)
+  arr.each_with_index do |line_string, index|
+    # p line_string.strip[-1]
+    if line_string.scan(/\;/).length == 1 && line_string.strip[-1] != ';'
+      puts "Semicolon error detected on line: #{index + 1}"
+    end
+  end
+end
+last_colon(file_array, bracket_hash)
+
+# Check if the colon is position at the end of the line
+def open_bracket(arr, hash)
+  arr.each_with_index do |line_string, index|
+    # p line_string.strip[-1]
+    if line_string.scan(/\{/).length == 1 && line_string.strip[-1] != '{'
+      puts "Opening Bracket error detected on line: #{index + 1}"
+    end
+  end
+end
+open_bracket(file_array, bracket_hash)
+
+# Check if the colon is position at the end of the line
+def open_bracket(arr, hash)
+  arr.each_with_index do |line_string, index|
+    if line_string.scan(/\}/).length == 1 && line_string.strip[0] != '}'
+      puts "Closing Bracket error detected on line: #{index + 1}"
+    end
+  end
+end
+open_bracket(file_array, bracket_hash)
+
+# Check for multiple semi-colons per line
+def multi_colons(arr, hash)
+  arr.each_with_index do |line_string, index|
+    if line_string.scan(/\;/).length > 1
+      puts "Multiple semi-colons detected on line: #{index + 1}"
+    end
+  end
+end
+multi_colons(file_array, bracket_hash)
 
 # convert hash into a 2d array
 hash_arr = bracket_hash.to_a

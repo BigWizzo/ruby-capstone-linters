@@ -2,12 +2,12 @@
   display: flex;
 }
  
-.flex-col { 
+.flex-col {     {}
   flex-direction: column;
 }
 
 .aic {
-  align-items: center;
+  align-items: center; hshs
 }
 
 .d-flex {
@@ -16,13 +16,16 @@
 }
  
 .flex-col {
-}
-{
   flex-direction: column;
+  $display: flex;
+  align-items: center;;
 }
 
-.aic { 
-  align-items: center;
+&aic {
+  align-items: center;;
 }
 
 }
+{{{}}}
+
+;;;
