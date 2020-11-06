@@ -7,13 +7,13 @@ class LintProcess
     @bracket_hash = {}
     @hash_arr = []
   end
-  
 end
 
-file='lorem.css'
-file_array = File.readlines(file)
-bracket_hash = {}
-hash_arr = []
+linter = LintProcess.new
+file = linter.file
+file_array = linter.file_array
+bracket_hash = linter.bracket_hash
+hash_arr = linter.hash_arr
 
 # puts white space line
 def trailing_white_space(arr)
@@ -49,7 +49,7 @@ hash_arr = bracket_hash.to_a
     j = 1
     while j < arr[i].length
       if !arr[i + 1].nil? && arr[i][1] == arr[i + 1][1]
-        print "No matching bracket '#{arr[i][1]}': line #{arr[i + 1][0]}\n"
+        print "No matching bracket '#{arr[i][1]}': for line #{arr[i + 1][0]}\n"
       end
       j += 1
     end
