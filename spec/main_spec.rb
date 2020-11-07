@@ -1,5 +1,4 @@
 require_relative '../bin/main'
-
 RSpec.describe 'An idial CSS Linter' do
   let(:linter) { LintProcess.new }
   let(:file_array) { ['the{', 'file}', 'maybe'] }
