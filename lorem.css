@@ -1,31 +1,16 @@
 .d-flex {
-  display: flex;
+  display: flex;;
 }
  
-.flex-col {     {}
+.flex-col {     {
   flex-direction: column;
 }
 
-.aic {
-  align-items: center; hshs
+.a-flex { gst
+  display: flex; dhs
+  {
 }
 
-.d-flex {
-  display: flex;
-} 
-}
- 
-.flex-col {
+.glex-col {
   flex-direction: column;
-  $display: flex;
-  align-items: center;;
-}
-
-&aic {
-  align-items: center;;
-}
-
-}
-{{{}}}
-
-;;;
+hjshs }
