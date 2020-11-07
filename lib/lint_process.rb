@@ -23,7 +23,6 @@ class LintProcess
     
   def check_bracket
     hash_arr = @bracket_hash.to_a
-    p hash_arr
     i = 0
     while i < hash_arr.length
       j = 1
