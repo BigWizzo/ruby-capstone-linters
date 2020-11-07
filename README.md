@@ -17,7 +17,7 @@
 
 ## Instructions
 
-How the game starts
+How the program is run
    - Open the console
    - Download or git clone the project
    - Navigate to the css working folder
