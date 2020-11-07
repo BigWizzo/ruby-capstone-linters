@@ -1,5 +1,5 @@
 
-require_relative './lint_process'
+require_relative '../lib/lint_process'
 
 linter = LintProcess.new
 file = linter.file
@@ -21,8 +21,25 @@ def bracket_line(arr, hash)
 end
 bracket_line(file_array, bracket_hash)
 
+hash_arr = bracket_hash.to_a
+def check_bracket(arr)
+  i = 0
+  while i < arr.length
+   j = 1
+   while j < arr[i].length
+     if !arr[i + 1].nil? && arr[i][1] == arr[i + 1][1]
+       puts "No matching bracket '#{arr[i][1]}' : line #{arr[i + 1][0]}\n"
+     end
+     j += 1
+   end
+   i += 1
+  end
+end
+check_bracket(hash_arr)
+
+if __FILE__ == $PROGRAM_NAME
 # Check for multiple brackets per line
-def multi_brackets(arr, hash)
+def check_error(arr, hash)
   arr.each_with_index do |line_string, index|
     if line_string[-2] == " "
       puts "Trailing whitespace detected: line #{index + 1}"
@@ -39,23 +56,5 @@ def multi_brackets(arr, hash)
     end
   end
 end
-multi_brackets(file_array, bracket_hash)
-
-# convert hash into a 2d array
-hash_arr = bracket_hash.to_a
-
-# Check line for missing brackets
- def check_bracket(arr)
-   i = 0
-   while i < arr.length
-    j = 1
-    while j < arr[i].length
-      if !arr[i + 1].nil? && arr[i][1] == arr[i + 1][1]
-        print "No matching bracket '#{arr[i][1]}' : line #{arr[i + 1][0]}\n"
-      end
-      j += 1
-    end
-    i += 1
-   end
- end
-check_bracket(hash_arr)
+check_error(file_array, bracket_hash)
+end
