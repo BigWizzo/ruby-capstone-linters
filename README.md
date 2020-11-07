@@ -2,7 +2,8 @@
 
 # RUBY CAPSTONE: CSS CUSTOM LINTERS
 
-> Setup A CSS linter project developed in Ruby
+> A CSS linter project developed in Ruby
+> It provides feedback about errors or warning in code
 
 ## Built With
 

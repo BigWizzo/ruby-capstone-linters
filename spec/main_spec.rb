@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../bin/main'
 
 RSpec.describe 'An idial CSS Linter' do

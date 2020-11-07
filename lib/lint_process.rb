@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # LintProces class initializing the file
 class LintProcess
   attr_reader :file, :file_array, :hash_arr, :bracket_hash
