@@ -20,7 +20,7 @@ class LintProcess
     end
     @bracket_hash
   end
-    
+
   def check_bracket
     hash_arr = @bracket_hash.to_a
     i = 0
