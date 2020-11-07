@@ -2,6 +2,8 @@
 
 # RUBY CAPSTONE: CSS CUSTOM LINTERS
 
+![screenshot](./screenshot.png)
+
 > A CSS linter project developed in Ruby
 > It provides feedback about errors or warning in code
 
@@ -14,7 +16,7 @@
 -run bundle install
 
 ## Instructions
-	
+
 How the game starts
    - Open the console
    - Download or git clone the project
