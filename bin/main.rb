@@ -6,7 +6,6 @@ linter = LintProcess.new
 file_array = linter.file_array
 bracket_hash = linter.bracket_hash
 
-# return hash of bracets and lines
 def bracket_line(arr, hash)
   arr.each_with_index do |line_string, index|
     chec = line_string.scan(/\{|\}/)
@@ -37,7 +36,6 @@ end
 check_bracket(hash_arr)
 
 if __FILE__ == $PROGRAM_NAME
-  # Check for multiple brackets per line
   def check_error(arr, _hash)
     arr.each_with_index do |line_string, index|
       if line_string[-2] == ' '
