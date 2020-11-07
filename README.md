@@ -1,76 +1,42 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# RUBY CAPSTONE: CSS CUSTOM LINTERS
 
-> One paragraph statement about the project.
-
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+> Setup A CSS linter project developed in Ruby
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- Ruby
 
-## Live Demo
+## Requirements
 
-[Live Demo Link](https://livedemo.com)
+-run bundle install
 
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+## Instructions
+	
+How the game starts
+   - Open the console
+   - Download or git clone the project
+   - Navigate to the css working folder
+   - Run ruby bin/main.rb
+   - Errors will show on to the console
+    
+   ## Running Tests
+   
+   - Open the console
+   - Navigate to the css working folder
+   - Run gem install rspec
+   - Run rspec
+   - The spec file is in the spec folder
 
 ## Authors
 
-👤 **Author1**
+👤 **Will Nyamunokora**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
+- Github: [@bigwizzo](https://github.com/bigwizzo)
+- Twitter: [@willnyamunokora](https://twitter.com/willnyamunokora)
+- Linkedin: [linkedin Profile](https://www.linkedin.com/in/willnyamunokora/)
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
