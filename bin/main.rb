@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
 require_relative '../lib/lint_process'
 
@@ -56,4 +56,4 @@ if __FILE__ == $PROGRAM_NAME
   check_error(file_array, bracket_hash)
 end
 
-# rubocop:enable Metrics/AbcSize, Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
