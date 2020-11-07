@@ -1,6 +1,6 @@
 # LintProces class initializing the file
 class LintProcess
-  attr_reader :file, :file_array, :bracket_hash
+  attr_reader :file, :file_array, :bracket_hash, :errors
 
   def initialize
     @file = 'lorem.css'
@@ -57,9 +57,3 @@ class LintProcess
     @errors
   end
 end
-
-linter = LintProcess.new
-linter.bracket_line
-linter.check_bracket
-linter.check_error
-
