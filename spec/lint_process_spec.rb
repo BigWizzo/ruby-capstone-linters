@@ -1,55 +1,70 @@
+# frozen_string_literal: true
+
 require_relative '../lib/lint_process'
 
 RSpec.describe 'An idial CSS Linter' do
-  # let(:title) { 'my title' }
-  # let(:instructions) { 'my instructions' }
-  # let(:game_board) { Board.new }
-  # let(:player_1) { Player.new('Kender', 'O') }
-  # let(:game_ui) { GameUi.new(title, instructions) }
-  # let(:game_ui_no_instructions) { GameUi.new(title) }
-  # let(:game_ui_no_title) { GameUi.new(nil, instructions) }
-  # let(:board) { [1, 2, 3, 'X', 5, 6, 7, 8, 9] }
-  let(:file_array) { ['the{', 'file}', 'maybe'] }
-  let(:bracket_hash) { {} }
-  let(:hash_arr) { [[1, '{'], [2, '}']] }
-  let(:lint) { LintProcess.new }
+  let(:err_file) { LintProcess.new('err_file.css') }
+  let(:clean_file) { LintProcess.new('clean.css') }
+  let(:empty_file) { LintProcess.new('empty.css') }
   describe 'The LintProcess class ' do
-      describe '#bracket_line' do
-        context 'when brackets are found in the file' do
-          it 'Returns a hash of opening brackets and closing brackets' do
-            expect(lint.bracket_line).to eq({1=>"{", 3=>"}"})
-          end
+    describe '#bracket_line' do
+      context 'when brackets are found in the file' do
+        it 'Returns a hash of opening brackets and closing brackets' do
+          expect(err_file.bracket_line).to eq({
+                                                1 => '{',
+                                                3 => '}',
+                                                7 => '}',
+                                                9 => '{',
+                                                11 => '{',
+                                                12 => '}',
+                                                14 => '{',
+                                                16 => '}'
+                                              })
         end
-
-        # context 'when brackets are not found in the file' do
-          # it 'when there is no title' do
-            # expect(linter.bracket_line).to eq({})
-          # end
-        # end
       end
 
-      # context 'when title is not provided' do
-        # it 'when there is no title' do
-          # expect(game_ui_no_title.display_title_on_screen).to eq('No title')
-        # end
-      # end
+      context 'when brackets are not found in the file' do
+        it 'Returns an empty hash' do
+          expect(empty_file.bracket_line).to eq({})
+        end
+      end
     end
-# 
-    # describe '#validating_value' do
-      # context 'When the player inputs the right value' do
-        # it 'validate the X and O' do
-          # expect(game_ui.validating_value('X')).to eq('X')
-        # end
-      # end
-# 
-      # context 'When the player inputs the wrong value' do
-        # before do
-          # allow(game_ui).to receive(:gets).and_return('O')
-        # end
-        # it 'validate input differences values than the X and O' do
-          # expect { game_ui.validating_value(' ') }.to output("Please enter X or O\n").to_stdout
-        # end
-      # end
-    # end
-  # end
+
+    describe '#check_bracket' do
+      context 'when all opening brackets match closing brackets in the file' do
+        it 'Returns an empty hash' do
+          expect(empty_file.check_bracket).to eq({})
+        end
+      end
+    end
+
+    describe '#check_error' do
+      context 'when there are no errors found' do
+        it 'Returns an empty hash' do
+          expect(clean_file.check_error).to eq({})
+        end
+      end
+    end
+
+    describe '#check_error' do
+      context 'when errors are found' do
+        it 'Returns a hash of errors' do
+          expect(err_file.check_error).to eq({
+                                               '10' => 'Semicolon error detected',
+                                               '16' => 'Closing Bracket error detected',
+                                               '2' => 'Multiple semi-colons detected',
+                                               '4' => 'Trailing whitespace detected',
+                                               '5' => 'Multiple brackets detected',
+                                               '9' => 'Opening Bracket error detected'
+                                             })
+        end
+      end
+
+      context 'when errors are not found' do
+        it 'Returns an empty hash' do
+          expect(empty_file.check_bracket).to eq({})
+        end
+      end
+    end
+  end
 end

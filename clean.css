@@ -1,0 +1,15 @@
+.d-flex {
+    display: flex;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .a-flex {
+    display: flex;
+  }
+
+  .glex-col {
+    flex-direction: column;
+  }

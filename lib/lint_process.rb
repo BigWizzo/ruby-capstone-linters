@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # LintProces class initializing the file
 class LintProcess
   attr_reader :file, :file_array, :bracket_hash, :errors
@@ -28,7 +30,7 @@ class LintProcess
       j = 1
       while j < hash_arr[i].length
         if !hash_arr[i + 1].nil? && hash_arr[i][1] == hash_arr[i + 1][1]
-          @errors.store("#{hash_arr[i + 1][0]}", "No matching bracket '#{hash_arr[i][1]}")
+          @errors.store((hash_arr[i + 1][0]).to_s, "No matching bracket '#{hash_arr[i][1]}")
         end
         j += 1
       end
@@ -40,17 +42,17 @@ class LintProcess
   def check_error
     file_array.each_with_index do |line_string, index|
       if line_string[-2] == ' '
-        @errors.store("#{index + 1}", "Trailing whitespace detected")
+        @errors.store((index + 1).to_s, 'Trailing whitespace detected')
       elsif line_string.scan(/\{|\}/).length > 1
-        @errors.store("#{index + 1}", "Multiple brackets detected")
+        @errors.store((index + 1).to_s, 'Multiple brackets detected')
       elsif line_string.scan(/\;/).length == 1 && line_string.strip[-1] != ';'
-        @errors.store("#{index + 1}", "Semicolon error detected")
+        @errors.store((index + 1).to_s, 'Semicolon error detected')
       elsif line_string.scan(/\{/).length == 1 && line_string.strip[-1] != '{'
-        @errors.store("#{index + 1}", "Opening Bracket error detected")
+        @errors.store((index + 1).to_s, 'Opening Bracket error detected')
       elsif line_string.scan(/\}/).length == 1 && line_string.strip[0] != '}'
-        @errors.store("#{index + 1}", "Closing Bracket error detected")
+        @errors.store((index + 1).to_s, 'Closing Bracket error detected')
       elsif line_string.scan(/\;/).length > 1
-        @errors.store("#{index + 1}", "Multiple semi-colons detected")
+        @errors.store((index + 1).to_s, 'Multiple semi-colons detected')
       end
     end
     @errors
