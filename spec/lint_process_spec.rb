@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../lib/lint_process'
 
 RSpec.describe 'An idial CSS Linter' do
@@ -49,14 +47,13 @@ RSpec.describe 'An idial CSS Linter' do
     describe '#check_error' do
       context 'when errors are found' do
         it 'Returns a hash of errors' do
-          expect(err_file.check_error).to eq({
-                                               '10' => 'Semicolon error detected',
-                                               '16' => 'Closing Bracket error detected',
-                                               '2' => 'Multiple semi-colons detected',
-                                               '4' => 'Trailing whitespace detected',
-                                               '5' => 'Multiple brackets detected',
-                                               '9' => 'Opening Bracket error detected'
-                                             })
+          expect(err_file.check_error).to
+          eq({ '10' => 'Semicolon error detected',
+               '16' => 'Closing Bracket error detected',
+               '2' => 'Multiple semi-colons detected',
+               '4' => 'Trailing whitespace detected',
+               '5' => 'Multiple brackets detected',
+               '9' => 'Opening Bracket error detected' })
         end
       end
 

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'colorize'
 require_relative '../lib/lint_process'
 linter = LintProcess.new(ARGV.first)
@@ -17,5 +15,3 @@ if __FILE__ == $PROGRAM_NAME
     puts "#{linter.errors.length} offenses detected".colorize(:red)
   end
 end
-
-# rubocop:enable

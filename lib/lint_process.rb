@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # LintProces class initializing the file
 class LintProcess
   attr_reader :file, :file_array, :bracket_hash, :errors
@@ -30,7 +28,8 @@ class LintProcess
       j = 1
       while j < hash_arr[i].length
         if !hash_arr[i + 1].nil? && hash_arr[i][1] == hash_arr[i + 1][1]
-          @errors.store((hash_arr[i + 1][0]).to_s, "No matching bracket '#{hash_arr[i][1]}")
+          @errors.store((hash_arr[i + 1][0]).to_s,
+                        "No matching bracket '#{hash_arr[i][1]}")
         end
         j += 1
       end
