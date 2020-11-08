@@ -2,8 +2,8 @@
 class LintProcess
   attr_reader :file, :file_array, :bracket_hash, :errors
 
-  def initialize
-    @file = 'lorem.css'
+  def initialize(file)
+    @file = file
     @file_array = File.readlines(file)
     @bracket_hash = {}
     @errors = {}
