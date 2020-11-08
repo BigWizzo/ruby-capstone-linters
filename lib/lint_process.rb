@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 # LintProces class initializing the file
 class LintProcess
   attr_reader :file, :file_array, :bracket_hash, :errors
@@ -57,3 +58,5 @@ class LintProcess
     @errors
   end
 end
+
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
