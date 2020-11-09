@@ -9,15 +9,15 @@ RSpec.describe 'An idial CSS Linter' do
       context 'when brackets are found in the file' do
         it 'Returns a hash of opening brackets and closing brackets' do
           expect(err_file.send(:bracket_line)).to eq({
-                                                    1=>"}",
-                                                    3=>"{",
-                                                    4=>"}",
-                                                    8=>"}",
-                                                    10=>"{",
-                                                    12=>"}",
-                                                    14=>"{",
-                                                    16=>"}"
-                                                            })
+                                                       1 => '}',
+                                                       3 => '{',
+                                                       4 => '}',
+                                                       8 => '}',
+                                                       10 => '{',
+                                                       12 => '}',
+                                                       14 => '{',
+                                                       16 => '}'
+                                                     })
         end
       end
 
@@ -47,15 +47,16 @@ RSpec.describe 'An idial CSS Linter' do
     describe '#check_error' do
       context 'when errors are found' do
         it 'Returns a hash of errors' do
-          expect(err_file.check_error).to eq({
-            "1" => "Closing Bracket error detected",
-            "10" => "Opening Bracket error detected",
-            "11" => "Semicolon error detected",
-            "16" => "Closing Bracket error detected",
-            "2" => "Multiple semi-colons detected",
-            "5" => "Trailing whitespace detected",
-            "6" => "Multiple brackets detected",
-            })
+          expect(err_file.check_error).to
+          eq({
+               '1' => 'Closing Bracket error detected',
+               '10' => 'Opening Bracket error detected',
+               '11' => 'Semicolon error detected',
+               '16' => 'Closing Bracket error detected',
+               '2' => 'Multiple semi-colons detected',
+               '5' => 'Trailing whitespace detected',
+               '6' => 'Multiple brackets detected'
+             })
         end
       end
 
