@@ -1,7 +1,6 @@
 require 'colorize'
 require_relative '../lib/lint_process'
 linter = LintProcess.new(ARGV.first)
-linter.bracket_line
 linter.check_bracket
 linter.check_error
 

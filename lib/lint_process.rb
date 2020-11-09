@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 # LintProces class initializing the file
 class LintProcess
-  attr_reader :file, :file_array, :bracket_hash, :errors
+  attr_accessor :file, :file_array, :bracket_hash, :errors
 
   def initialize(file)
     @file = file
@@ -10,6 +10,7 @@ class LintProcess
     @errors = {}
   end
 
+  private
   def bracket_line
     @file_array.each_with_index do |line_string, index|
       chec = line_string.scan(/\{|\}/)
@@ -22,15 +23,17 @@ class LintProcess
     @bracket_hash
   end
 
+  public
   def check_bracket
+    bracket_line
     hash_arr = @bracket_hash.to_a
     i = 0
     while i < hash_arr.length
-      j = 1
+      j = 0
       while j < hash_arr[i].length
         if !hash_arr[i + 1].nil? && hash_arr[i][1] == hash_arr[i + 1][1]
           @errors.store((hash_arr[i + 1][0]).to_s,
-                        "No matching bracket '#{hash_arr[i][1]}")
+            "No matching bracket '#{hash_arr[i][1]}'")
         end
         j += 1
       end
@@ -39,6 +42,7 @@ class LintProcess
     @errors
   end
 
+  public
   def check_error
     file_array.each_with_index do |line_string, index|
       if line_string[-2] == ' '
