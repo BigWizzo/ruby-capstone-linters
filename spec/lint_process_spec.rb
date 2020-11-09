@@ -54,8 +54,7 @@ RSpec.describe 'An idial CSS Linter' do
               '16' => 'Closing Bracket error detected',
               '2' => 'Multiple semi-colons detected',
               '5' => 'Trailing whitespace detected',
-              '6' => 'Multiple brackets detected' }
-                                             )
+              '6' => 'Multiple brackets detected' })           
         end
       end
 
