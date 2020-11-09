@@ -1,3 +1,4 @@
+# rubocop:disable Layout/MultilineHashBraceLayout
 require_relative '../lib/lint_process'
 
 RSpec.describe 'An idial CSS Linter' do
@@ -47,8 +48,8 @@ RSpec.describe 'An idial CSS Linter' do
     describe '#check_error' do
       context 'when errors are found' do
         it 'Returns a hash of errors' do
-          expect(err_file.check_error).to eq({
-              '1' => 'Closing Bracket error detected',
+          expect(err_file.check_error).to eq(
+            { '1' => 'Closing Bracket error detected',
               '10' => 'Opening Bracket error detected',
               '11' => 'Semicolon error detected',
               '16' => 'Closing Bracket error detected',
@@ -66,3 +67,5 @@ RSpec.describe 'An idial CSS Linter' do
     end
   end
 end
+
+# rubocop:disable Layout/MultilineHashBraceLayout
