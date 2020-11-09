@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'colorize'
 require_relative '../lib/lint_process'
 linter = LintProcess.new(ARGV.first)

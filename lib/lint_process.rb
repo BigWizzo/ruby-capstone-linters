@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 # LintProces class initializing the file
 class LintProcess
