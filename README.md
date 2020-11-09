@@ -35,7 +35,7 @@ How to run the linters program
  ## Good vs Bad Code
    **Good Code**
    
-     ```css
+     ```
      .d-flex {
         display: flex;
      }
@@ -46,7 +46,7 @@ How to run the linters program
      ```
    **Bad Code**
    
-     ```css
+     ```
      .d-flex }                  * Opening bracket error *
         display: flex;;         * Double semi colons *
      {                          * Closing bracket error *
