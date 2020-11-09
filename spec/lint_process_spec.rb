@@ -1,4 +1,4 @@
-# rubocop:disable Layout/MultilineHashBraceLayout
+# rubocop:disable Layout/MultilineMethodCallBraceLayout
 require_relative '../lib/lint_process'
 
 RSpec.describe 'An idial CSS Linter' do
@@ -68,4 +68,4 @@ RSpec.describe 'An idial CSS Linter' do
   end
 end
 
-# rubocop:disable Layout/MultilineHashBraceLayout
+# rubocop:enable Layout/MultilineMethodCallBraceLayout
