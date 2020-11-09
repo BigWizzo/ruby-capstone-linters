@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/lint_process'
 
 RSpec.describe 'An idial CSS Linter' do
@@ -55,7 +57,7 @@ RSpec.describe 'An idial CSS Linter' do
             '2' => 'Multiple semi-colons detected',
             '5' => 'Trailing whitespace detected',
             '6' => 'Multiple brackets detected'
-                                            })
+                                             })
         end
       end
 
