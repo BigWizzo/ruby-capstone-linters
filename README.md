@@ -58,7 +58,7 @@ How to run the linters program
 
      .a-flex { gst              * Content after opening bracket *
        display: flex; dhs       * Content after semicolon *
-     }                          * Content before closing bracket *
+     hsj}                       * Content before closing bracket *
      ```
     
  ## Running Tests
