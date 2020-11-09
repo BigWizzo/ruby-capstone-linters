@@ -1,6 +1,7 @@
 .d-flex }
   display: flex;;
 {
+}
  
 .flex-col { {
   flex-direction: column;
@@ -8,8 +9,7 @@
 
 .a-flex { gst
   display: flex; dhs
-  {
-}
+ }
 
 .glex-col {
   flex-direction: column;

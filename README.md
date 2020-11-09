@@ -27,9 +27,9 @@ How to run the linters program
    - `cd ruby-capstone-linters`
    - Run `ruby bin/main.rb path_to_css_file.css
    - Three examples are included inside the css folder for testing the program
-     > err_file.css: contains some css errors
-     > clean.css: contains clean code
-     > err_file.css: empty css file
+     > **err_file.css** which contains some css errors
+     > **clean.css** which contains clean code
+     > **err_file.css** which empty css file
    - Errors will show on to the console
    
  ## Good vs Bad Code
@@ -47,18 +47,18 @@ How to run the linters program
    **Bad Code**
    
      ```
-     .d-flex }                * *Opening bracket error* *
-        display: flex;;       * Double semi colons *
-     {                        * Closing bracket error *
+     .d-flex }                  * **Opening bracket error** *
+        display: flex;;         * **Double semi colons** *
+     {                          * **Closing bracket error** *
      }
-     
-     .flex-col { {             * Multuple brackets error *
-        flex-direction: column;
-     } |                       * Trailing white space *
 
-     .a-flex { gst             * Content after opening bracket *
-       display: flex; dhs      * Content after semicolon *
-     }                         * Content before closing bracket *
+     .flex-col { {              * **Multuple brackets error** *
+        flex-direction: column;
+     } |                        * **Trailing white space** *
+
+     .a-flex { gst              * **Content after opening bracket** *
+       display: flex; dhs       * **Content after semicolon** *
+     }                          * **Content before closing bracket** *
      ```
     
  ## Running Tests
