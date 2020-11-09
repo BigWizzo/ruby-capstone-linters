@@ -44,8 +44,6 @@ class LintProcess
     @errors
   end
 
-  public
-
   def check_error
     file_array.each_with_index do |line_string, index|
       if line_string[-2] == ' '
