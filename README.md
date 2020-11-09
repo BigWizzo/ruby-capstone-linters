@@ -17,7 +17,7 @@
 
 ## Requirements
 
--run bundle install
+- run bundle install
 
 ## Instructions
 
@@ -25,7 +25,7 @@ How to run the linters program
    - Open the console
    - Download or `git clone https://github.com/BigWizzo/ruby-capstone-linters.git`
    - `cd ruby-capstone-linters`
-   - Run `ruby bin/main.rb path_to_css_file.css
+   - Run `ruby bin/main.rb path_to_css_file.css`
    - Three examples are included inside the css folder for testing the program
      - **err_file.css** which contains some css errors
      - **clean.css** which contains clean code
