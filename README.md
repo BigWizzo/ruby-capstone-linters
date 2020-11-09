@@ -33,7 +33,7 @@ How to run the linters program
    - Errors will show on to the console
    
  ## Good vs Bad Code
-   ** Good Code **
+   **Good Code**
    
      ```
      .d-flex {
@@ -44,21 +44,21 @@ How to run the linters program
         flex-direction: column;
      }
      ```
-   ** Bad Code **
+   **Bad Code**
    
      ```
-     .d-flex }                * Opening bracket error *
+     .d-flex }                * *Opening bracket error* *
         display: flex;;       * Double semi colons *
      {                        * Closing bracket error *
      }
- 
-     .flex-col { {            * Multuple brackets error *
+     
+     .flex-col { {             * Multuple brackets error *
         flex-direction: column;
-     } |                      * Trailing white space *
+     } |                       * Trailing white space *
 
-.    a-flex { gst             * Content after opening bracket *
-       display: flex; dhs     * Content after semicolon *
-     }                        * Content before closing bracket *
+     .a-flex { gst             * Content after opening bracket *
+       display: flex; dhs      * Content after semicolon *
+     }                         * Content before closing bracket *
      ```
     
  ## Running Tests
